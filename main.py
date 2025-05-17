@@ -33,13 +33,12 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-
+        print(f"dt: {dt}")
         screen.fill("black")
         updatable.update(dt)
         for entity in drawable:
             entity.draw(screen)
         shots_group.update(dt)
-        player.timer -= dt
         for shot in shots_group:
             shot.draw(screen)
         pygame.display.flip()
