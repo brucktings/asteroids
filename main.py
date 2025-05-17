@@ -39,6 +39,7 @@ def main():
         for entity in drawable:
             entity.draw(screen)
         shots_group.update(dt)
+        player.timer -= dt
         for shot in shots_group:
             shot.draw(screen)
         pygame.display.flip()
