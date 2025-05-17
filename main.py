@@ -49,8 +49,12 @@ def main():
                 print("Game over!")
                 pygame.quit()
                 sys.exit()
-            else:
-                pass        
+        #killing asteroids:
+        for asteroid in asteroids:
+            for shot in shots_group:
+                if asteroid.collide(shot) == True:
+                    asteroid.kill()
+                    shot.kill()       
 
     pygame.quit()
 
